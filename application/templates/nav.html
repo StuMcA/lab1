@@ -2,9 +2,9 @@
     <ul class="centerUL">
         <li><a href="{{ url_for("index") }}" {% if index %}  class="active" {% endif %} >Home</a></li>
         <li><a href="{{ url_for("products") }}" {% if products %}  class="active" {% endif %} >Products</a></li>
-        <li><a href="basket.html">Basket</a></li>
+        <li><a href="{{ url_for("basket") }}">Basket</a></li>
         <li><a href="{{ url_for("signup") }}" {% if signup %}  class="active" {% endif %} >Sign Up</a></li>
-        <li><a href="login.html">Sign In</a></li>
+        <li><a href="{{ url_for("login") }}">Sign In</a></li>
     </ul>
 </header>
 <hr>

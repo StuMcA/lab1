@@ -1,0 +1,38 @@
+{% extends 'master.html' %}
+
+{% block content %}
+<h2>Basket</h2>
+<div>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Number</th>
+            <th scope="col">Total</th>
+        </tr>
+        </thead>
+        <tbody>
+<!--        {% set runningTotal = 0 %}-->
+        {% for data in dataProductsAdded %}
+        {% set productTotal = data[2]|float * data[3]|float %}
+        <tr>
+            <td>{{ data[0] }}</td>
+            <td>{{ data[1] }}</td>
+            <td>{{ "£%.2f"|format(data[2]|float) }}</td>
+            <td>{{ data[3] }}</td>
+            <td>{{ "£%.2f"|format(productTotal) }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{ "£%.2f"|format(basketTotal) }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
